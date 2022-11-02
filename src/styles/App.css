@@ -1,0 +1,123 @@
+
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       /* url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff2) format('woff2'), */
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       /* url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('woff2'), */
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+       /* url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff2) format('woff2'), */
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  
+  margin: 0;
+  font-family: 'Nanum Gothic';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.header {
+  background : black;
+  width : 100%;
+  color : white;
+  padding : 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__btn-case {
+  margin: auto 0;
+}
+
+.header__btn {
+  margin: 0 5px;
+}
+
+
+.navi {
+  background : rgb(255, 255, 255);
+  width : 100%;
+  /* display : flex; */
+  /* color : white; */
+  /* margin: 10 0 10 0; */
+  margin-bottom: 15px;
+}
+
+.map {
+  /* background : rgb(58, 85, 112); */
+  /* display: flex; */
+  float: left;
+  width: 50%; 
+  /* width: 500px; */
+  height: 500px;
+}
+
+
+
+.App {
+  box-sizing: border-box;
+  padding: 30px calc((100vw - min(1400px - 60px, calc(100vw - 60px))) / 2);
+  /* padding-top: 0px; */
+  /* 가운데정렬 구현: https://blogpack.tistory.com/1011 */
+}
+
+.navi__dev{
+  display: block;
+  margin: 10px;
+}
+
+
+/* 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'twaysky', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+
+
+@media screen and (max-width: 620px) {
+  .map, .detail {
+    width: 100%;
+  }
+}

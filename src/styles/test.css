@@ -1,0 +1,16 @@
+
+
+
+.footer {
+    text-align: left;
+    background : rgb(75, 75, 75);
+    width : 100%;
+    /* height: 300px; */
+    color : white; 
+    padding : 20px;
+    display: inline-block;
+    /* justify-content: space-between; */
+    font-size: 3px;
+  }
+
+.tab { white-space: pre; }
