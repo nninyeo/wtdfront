@@ -8,7 +8,7 @@ const JobDetailOpend = () => {
         <div>
             <div className="detail">
                 <div className="row">
-                    상세정보 나타내기 (글1개 눌렀을때)
+                    상세정보 나타내기 (글1개 눌렀을때)asdf
                 </div>
             </div>  
             
