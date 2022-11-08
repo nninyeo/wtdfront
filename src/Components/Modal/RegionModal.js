@@ -41,7 +41,7 @@ const RegionModal = (props) => {
     const dispatch = useDispatch();
 
     //store 데이터 세분화, [0]: 선택갯수, [1]: 마을목록string [2]: url스트링묶음 [3]: 한글약어(부산 등)
-    const [currentRegionValue, setCurrentRegionValue] = useState([regionFromStore[0],regionFromStore[1],regionFromStore[2],regionFromStore[3]]);
+    // const [currentRegionValue, setCurrentRegionValue] = useState([regionFromStore[0],regionFromStore[1],regionFromStore[2],regionFromStore[3]]);
     let selectedText = "부산 등";
     let selectedTownParam = ["abc"];
     let cityInfo = {
@@ -64,7 +64,7 @@ const RegionModal = (props) => {
         "하남시": "gyeonggi.hanam-si",
     }
     //전체/서울/경기 클릭한거 1개
-    const [currentTown, setCurrentTown] = useState(""); 
+    // const [currentTown, setCurrentTown] = useState(""); 
 
     //선택한 큰지역/세부지역 리스트
     let [selectedTown, setSelectedTown] = useState(regionFromStore.townKOR);   //선택한마을: 강동구 하남시 등의 하위 상세지역
@@ -90,7 +90,7 @@ const RegionModal = (props) => {
             selectedText += ' 등';
         }
         // setCurrentRegionValue([selectedTown.length, selectedTown, "", selectedText]);//이게또작동이안되네.....
-debugger;
+
         
     }
 
@@ -115,7 +115,6 @@ debugger;
 
     useEffect(()=>{
         // setCurrentRegionValue([selectedTown.length, selectedTown, "", selectedText]);//이게또작동이안되네.....
-        console.log("우앙굳");
     }, [selectedText]) 
 
 
@@ -263,7 +262,7 @@ debugger;
                 return false;
             }
             setSelectedCity([...selectedCity, "경기"]);//경기추가
-            console.log(selectedCity);
+            // console.log(selectedCity);
             // setSelectedCity(selectedCity.filter(city => city !== "서울"));//서울제거
             setListOfTown([...cityInfo.경기]);
         }
@@ -282,9 +281,9 @@ debugger;
          //louis end
 
 
-         if(currentTown.includes("전체") === "전체"){//지우면고장
-            // setlistOfTown = ["전체"];
-         }
+        //  if(currentTown.includes("전체") === "전체"){//지우면고장
+        //     // setlistOfTown = ["전체"];
+        //  }
          calcTownToCity();
          nowClickedCityName = "";
     };

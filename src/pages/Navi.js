@@ -195,7 +195,7 @@ const Navi = () => {
 
                             for(let i = 0; i < regionFromStore.townQty; i++) {
                                 params.append("locationList", regionFromStore.townUrlParam[i]);
-                                console.log(regionFromStore.townUrlParam[i]);
+                                // console.log(regionFromStore.townUrlParam[i]);
                             }
 
 
@@ -209,17 +209,27 @@ const Navi = () => {
                             // console.log(yearFromStore[1]);
                             params.append("userId", "123");
                             params.append("offset", "20");
-                            params.append("limit", "7");
+                            params.append("limit", "20");
+
+                           
                             var request = {
                                 params: params
                             };
                             axios.get(url, request).then((결과) => {
                                 // console.log("리퀘스트1: ");
-                                console.log(결과.data);
+                                // console.log(결과.data);
                                 // console.log("리퀘스트2: ");
                                 // console.log(결과.data.data);
+                                // const obj = JSON.parse(json);
+                                // 결과.data.map((data, i) => (
+                                //     let location = 결과.data[i].
+                                // ))
                                 dispatch(changeDetailData(결과.data));
-                                
+                                // for()
+                                // let ResultDatas = useSelector((state) => state.DetailData );
+
+
+
                             })
                                 .catch(() => {
                                     console.log('실패함')

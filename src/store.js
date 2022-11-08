@@ -10,7 +10,7 @@ let detailDatasFromSpring = {
             "detailIntro": "null",  //회사소개
             "detailRequirements": "null",   //자격요건
             "company": "null",
-            "location": "{lat=null, lng=null}",
+            "location": "{lat=125.7669825, lng=39.0588821}",
             "detailMain_tasks": "null",     //주요업무
             "id": "null",
             "position": "null",

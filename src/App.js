@@ -18,12 +18,21 @@ import TestFooter from './pages/TestFooter.js';
 //const cors = require('cors');
 
 function App() {
+
+
+  // const tester = () => {
+  //   console.log("tester!");
+  // }
+  let tester = "TESTER"
+
   return (
     <div className="App">
     
       <Header></Header>      
       <Navi></Navi>
-      <KakaoMap></KakaoMap>
+      <KakaoMap
+        tester = {tester}
+      ></KakaoMap>
       <JobList></JobList>
       <TestFooter></TestFooter>
 

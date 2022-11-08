@@ -1,108 +1,67 @@
-// import axios from 'axios'
+
 //디테일 컨테이너
 import { useSelector } from "react-redux";
-
-// console.log("콘솔로그");
-// console.log("sdf%d",Navi(yearValue2));
-
-// import { useEffect } from 'react';
-// const { kakao } = window;
+// import React, { useEffect, useState } from 'react';
 
 
 const JobList = () => {
-    // useEffect(() => {
-    //     var mapContainer = document.getElementById('myMap'), // 지도를 표시할 div  
-    //         mapOption = { 
-    //             center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    //             level: 6, // 지도의 확대 레벨
-    //             mapTypeId : kakao.maps.MapTypeId.ROADMAP
-    //         };
 
-    //     var map = new kakao.maps.Map(mapContainer, mapOption);
-    //     debugger;
-    //     var positions = [
-    //         {
-    //             title: '카카오', 
-    //             latlng: kakao.maps.LatLng(33.450705, 126.570677)
-    //         },
-    //         {
-    //             title: '생태연못', 
-    //             latlng: kakao.maps.LatLng(33.450936, 126.569477)
-    //         },
-    //         {
-    //             title: '텃밭', 
-    //             latlng: kakao.maps.LatLng(33.450879, 126.569940)
-    //         },
-    //         {
-    //             title: '근린공원',
-    //             latlng: kakao.maps.LatLng(33.451393, 126.570738)
-    //         }
-    //     ];
-
-    //     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-        
-    //     for (var i = 0; i < positions.length; i ++) {
-    //         // 마커 이미지의 이미지 크기 입니다
-    //         var imageSize = new kakao.maps.Size(24, 35); 
-    //         // 마커 이미지를 생성합니다    
-    //         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    //         // 마커를 생성합니다
-    //         var marker = new kakao.maps.Marker({
-    //             map: map, // 마커를 표시할 지도
-    //             position: positions[i].latlng, // 마커를 표시할 위치
-    //             title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-    //             image : markerImage // 마커 이미지 
-    //         });
-        
-    //     }
-    // })
 
     const DetailDataMap = useSelector((state) => state.DetailData );
-    
 
-    //제작중.............................................
-//     const handleClick = e => {
-//         e.preventDefault();
-//         debugger;
-//         //e.stopPropagation();       
-         
-//         console.log(e.target)
-//         let cardCaseDiv = e.target
-// // debugger;
-//         cardCaseDiv.nextElementSibling.classList.toggle('hide')
-        
-//     }
-
-    const handleClick = (id, e) => {
+    const seeDetailCard = (id, e) => {
         document.getElementById(id).classList.toggle("hide"); 
     }
 
+    const addColorOnCard = (id, e) => {
+        document.getElementById(id).parentElement.classList.add("addColorOnCard"); 
+    }
+    const removeColorOnCard = (id, e) => {
+        document.getElementById(id).parentElement.classList.remove("addColorOnCard"); 
+    }
+
+
+    const removeCard = (e) => {
+        e.stopPropagation()
+
+        //지우기 구현하기
+    }
+
+
+    
+
     const Item = ({ text }) => {
         return <p>
-          {text.split("\n").map((txt) => (
+          {text.split("\n").map((txt, i) => (
               <>
                 {txt}
-                <br />
+                <br/>
               </>
             ))}
         </p>;
-      };
+    };
 
 
     return (
         <div>
             <div className="detail">
 
+
+{/* 차후 이 링크를 보고 부드러운 여닫기 제작한다: https://www.musinsa.com/app/goods/2843986?loc=goods_rank */}
+{/* https://www.impressivewebs.com/animate-display-block-none/ */}
+            {/* 반복시작 - 닫은디테일 */}
+            {/* onClick={seeDetailCard(data.id)} */}
             {DetailDataMap.data.map((data, i) => (  // 맵함수를 이용해 dummy 안의 days 그룹 내의 원소를 검색한다.
             <div key={data.id}>
 
                 <div className="card__case"
-                onClick={(e)=>{handleClick(data.id, e)}}
-                >{/* 반복시작 - 닫은디테일 */}
-                {/* onClick={handleClick(data.id)} */}
+                onClick={(e)=>{seeDetailCard(data.id, e)}}
+                onMouseOver={(e)=>{addColorOnCard(data.id, e)}}
+                onMouseOut={(e)=>{removeColorOnCard(data.id, e)}}
+                >
                     
                     <div className="card__thumb">   
-                        <img className="card__thumb__img" src={data.thumb} />
+                        <img className="card__thumb__img" alt="thumb392" src={data.thumb} />
                     </div>
                     <div className="card__texts">
                         <div className="card__posision">
@@ -112,8 +71,9 @@ const JobList = () => {
                             <div className="card__small__company">
                                 {data.company}
                             </div>
-                            <div className="card__small__delete btn">
-                                지우기버튼
+                            <div className="card__small__delete btn"
+                                onClick={(e) => removeCard(e)}>
+                                목록에서 삭제
                             </div>
                         </div>
                     </div>
@@ -124,7 +84,7 @@ const JobList = () => {
                     <div className="card__case2__3door">
                         <div>상태: {data.status}</div>
                         <div>게시물ID: {data.id}</div>
-                        <div>마감일: {data.dueTime}</div>
+                        <div>마감일:{data.dueTime}</div>
                     </div>
                     <div>
                         <span className="card2__desc__subj">주소</span>
