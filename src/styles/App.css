@@ -80,10 +80,12 @@
   margin-bottom: 15px;
 }
 
-.map {
+.geo {
   /* background : rgb(58, 85, 112); */
-  /* display: flex; */
+  display: flex;
   float: left;
+  align-items: center;
+  justify-content: center;
   width: 50%; 
   /* width: 500px; */
   height: 500px;
@@ -114,10 +116,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 } */
 
+.geo__text__announcement{
+  text-align: center;
+
+}
 
 
 @media screen and (max-width: 620px) {
-  .map, .detail {
+  .geo, .detail {
     width: 100%;
   }
 }

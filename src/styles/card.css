@@ -18,6 +18,7 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    border-top-style: outset;
 }
 
 .card__thumb {

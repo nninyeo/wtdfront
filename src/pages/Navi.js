@@ -3,7 +3,7 @@ import AdjYearModal from '../Components/Modal/AdjYearModal';
 import { useState } from 'react';
 // import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { changeDetailData } from '../store'
+import { changeDetailData, isSearched } from '../store'
 // import { changeYear } from '../store';
 import RegionModal from '../Components/Modal/RegionModal'
 
@@ -197,11 +197,7 @@ const Navi = () => {
                                 params.append("locationList", regionFromStore.townUrlParam[i]);
                                 // console.log(regionFromStore.townUrlParam[i]);
                             }
-
-
                             // params.append("locationList", "seoul.songpa-gu");
-
-
 
                             params.append("yearList", yearFromStore[0]);
                             // console.log(yearFromStore[0]);
@@ -209,34 +205,33 @@ const Navi = () => {
                             // console.log(yearFromStore[1]);
                             params.append("userId", "123");
                             params.append("offset", "20");
-                            params.append("limit", "20");
+                            params.append("limit", "10");
 
                            
                             var request = {
                                 params: params
                             };
                             axios.get(url, request).then((결과) => {
-                                // console.log("리퀘스트1: ");
-                                // console.log(결과.data);
-                                // console.log("리퀘스트2: ");
-                                // console.log(결과.data.data);
-                                // const obj = JSON.parse(json);
-                                // 결과.data.map((data, i) => (
-                                //     let location = 결과.data[i].
-                                // ))
+
+                                /* lat lng String -> KV 변환 */
+                                for(let k = 0; k < 결과.data.data.length; k++){
+                                    let obj = {};
+                                    결과.data.data[k].location.replace(/(\w+)=(\d+\.\d+)/g, function (_, key, val) {
+                                        obj[key] = parseFloat(val);
+                                    });
+                                    결과.data.data[k].location = obj;
+                                    // console.log(결과.data.data[k].location);
+                                }
+
                                 dispatch(changeDetailData(결과.data));
-                                // for()
-                                // let ResultDatas = useSelector((state) => state.DetailData );
-
-
-
+                                dispatch(isSearched("search"))
                             })
                                 .catch(() => {
                                     console.log('실패함')
                                 })
                             }}>
                             <div>
-                                <span>임시검색하기</span>
+                                <span>검색하기</span>
                                 
                             </div>
                         </button>

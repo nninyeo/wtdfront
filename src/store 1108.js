@@ -16,55 +16,35 @@ let detailDatasFromSpring = {
             "detailBenefits": "null",   //혜택 및 복지
             "status": "null",
             "detailPreferred_points": "null",    //우대사항
-            "mouse": "null",    //상태: null, click, out, hover
-            "clicked": "null"   //상태: clicked, ??????
+            "mouse": "null",    //디테일페이지에서 개별카드 상태관리용으로 사용
+            "clicked": "null"
         }
     ]
 };
-
-//우측 리스트에서 클릭한 회사 관련 store. 관련 코드 삭제예정
-let rightListStore = {
-    "index": "",
-    "prvIndex": ""
-}
-
-//rightListStore Mutation
-let rightListMutation = createSlice({
-    name: 'rightListMutation',
-    initialState: rightListStore,
-    reducers: {
-        mutationRightList(state, action) {
-            return action.payload;
-        }
-    }
-})
-export let { mutationRightList } = rightListMutation.actions
 
 //스프링으로부터 받아온 데이터 저장
 let detailDatas = createSlice({
     name : 'detailDatas',
     initialState : detailDatasFromSpring,
     reducers : {
+
         changeDetailData(state, action) {
             let copy = state;
             copy = action.payload;
             
             return copy;
-        },
-        changeMouseStatus(state, action) {
-            return action.payload;
         }
     }
 })
-export let { changeDetailData, changeMouseStatus } = detailDatas.actions
+export let { changeDetailData } = detailDatas.actions
 
 
 //버튼 클릭 유무(지도관련 반복문으로 맵 중첩되어 생성안되게 할때 사용. 필히 필수. 변수명이 살짝 에러임.)
-let isSearchBtn = createSlice({
-    name : 'isSearchBtn',
-    initialState : "init",  //init, searched, after, search
+let isClickBtn = createSlice({
+    name : 'isClickBtn',
+    initialState : "init",
     reducers : {
-        isSearched(state, action) {
+        isClicked(state, action) {
             let copy = state;
             copy = action.payload;
             
@@ -72,7 +52,7 @@ let isSearchBtn = createSlice({
         }
     }
 })
-export let { isSearched } = isSearchBtn.actions
+export let { isClicked } = isClickBtn.actions
 
 //Year모달 동작값 저장
 let year = createSlice({
@@ -106,8 +86,8 @@ export default configureStore({
     DetailData: detailDatas.reducer,
     yearSearchValues: year.reducer,
     regionSearchValues: region.reducer,
-    isSearched: isSearchBtn.reducer,
-    mutationList: rightListMutation.reducer
+
+    isClicked: isClickBtn.reducer
   }
 })
 

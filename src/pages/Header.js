@@ -1,6 +1,7 @@
 // import axios from 'axios'
 import { useState } from 'react';
 import LoginModal from '../Components/Modal/LoginModal'
+import { CodeOutlined } from '@ant-design/icons';
 
 const Header = () => {
 
@@ -11,7 +12,7 @@ const loginModalOpen = () => { setIsOpen(!isOpen); };
     return (
         <div className="header">
             <div className="header__subject">
-                <h3>원티드 채용 지도로보기</h3> 
+                <h3><CodeOutlined style={{ fontSize: '16px', color: '#ffd400' }} /> 원티드 채용 지도로보기 </h3> 
             </div>
             <div className="header__btn-case">
                 <span className="text header__btn"> welcome USERNAME </span>    

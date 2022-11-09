@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 const TestFooter = () => {
 
     const DetailDataMap = useSelector((state) => state.DetailData );
-    // debugger;
 
     return (
         <div className="footer">
