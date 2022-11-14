@@ -19,3 +19,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 제약사항
  - 원티드와 직접 연계되지는 않음
+
+
+참고자료(맵 관련, React kakaomap API는 사용되지않음)
+ - https://tlqckd0.tistory.com/43
+ - https://art-coding3.tistory.com/58
+ - https://apis.map.kakao.com/web/sample/addMapClickEventWithMarker/
+  

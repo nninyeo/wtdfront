@@ -11,7 +11,7 @@
 
 } */
 .nav__filter {
-    margin-bottom: 10px;
+    margin-bottom: 35px;
     padding-top: 10px;
     margin-right: 10px;
     margin-left: 10px;
@@ -223,8 +223,7 @@ svg:not(:root) {
     display: inline-flex;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px;    
 }
 .nav__filter .nav__filter-body .nav__filter-btns .nav__btn .nav__btn--size {
     position: absolute;

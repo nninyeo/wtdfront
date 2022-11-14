@@ -7,6 +7,7 @@
     min-width: 450px;
     overflow: auto;
     /* display: flex; */
+    
   }
 
 .card__case {
@@ -18,7 +19,8 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    border-top-style: outset;
+    /* border-top: #ddd solid 1px; */
+    /* margin-right: 20px; */
 }
 
 .card__thumb {
@@ -34,12 +36,12 @@
     /* background-color: chocolate; */
     max-width: 750px;
     height: 60px;
-    /* width: 340px; */
+    width: 75%;
     text-align: -webkit-center;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     margin-right: 20px;
 }
 
@@ -48,14 +50,21 @@
     min-width: 300px;
     /* height: 30px; 두줄대응 */
     /* padding-top: 5px; */
-    font-size: large;
+    /* font-size: large; */
     font-weight: 700;
     text-align: left;
+
+    font-size: 1rem;
+    /* width:100%;	 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .card__small__area{
     /* background-color: rgb(116, 194, 74); */
-    width: 300px;
+    width: 100%;
     height: 20px;
     display: flex;
     justify-content: space-between;
@@ -63,7 +72,7 @@
 
 .card__small__company{
     /* background-color: rgb(57, 157, 193); */
-    width: 150px;
+    width: 70%;
     height: 20px;
     text-align: left;
 }
@@ -106,6 +115,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     transition: all 0.3s;
+    /* margin-right: 20px; */
 }
 /* set end */
 
@@ -152,4 +162,10 @@
 
 .addColorOnCard{
     background-color: rgb(188, 189, 201);
+    /* margin-right: 20px; */
+}
+
+.detailcard{
+    margin-right: 10px;
+    border-top: #ddd solid 1px;
 }

@@ -1,3 +1,4 @@
+// import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeDetailData, mutationRightList } from '../store'
 
@@ -83,7 +84,7 @@ const JobList = () => {
             <div className="detail">
                 { DetailDataMap.data.map((data, i) => (  // 맵함수를 이용해 dummy 안의 days 그룹 내의 원소를 검색한다.
                     <div key={data.id}
-                         className= { (data.mouse === "hover" ? "addColorOnCard" : "") }>
+                         className= { (data.mouse === "hover" ? "addColorOnCard detailcard" : "detailcard") }>
                     <div 
                         className="card__case"
                         onClick={(e) => { seeDetailCard(i, e) }}
@@ -93,7 +94,8 @@ const JobList = () => {
                         <div className="card__thumb">   
                             <img className="card__thumb__img" alt="thumb392" src={data.thumb} />
                         </div>
-                        <div className="card__texts"> mouse: {data.mouse} / clicked: {data.clicked}
+                        <div className="card__texts">
+                             {/* mouse: {data.mouse} / clicked: {data.clicked} */}
                             <div className="card__posision">
                                 {data.position} 
                             </div>
@@ -105,6 +107,7 @@ const JobList = () => {
                                     onClick={(e) => removeCard(i, e)}
                                     >
                                     안보기 ❌
+                                    {/* { data.id === "null" ? removeCard(i) : {} } */}
                                 </div>
                             </div>
                         </div>

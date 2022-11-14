@@ -183,12 +183,12 @@ const Navi = () => {
                         <button 
                             className="nav__btn btn-enable nav__btn--search"
                             onClick={() => {
+                            const host = process.env.REACT_APP_HOST;
                             const url = //default value
-                                "http://localhost:18080/api/main/jobs?country=kr&job_sort=job.latest_order";
-
+                                // "http://localhost:18080/api/main/jobs?country=kr&job_sort=job.latest_order";
+                                `http://${host}/api/main/jobs?country=kr&job_sort=job.latest_order`;
                             var params = new URLSearchParams();
                             // params.append("locationList", "seoul.gangdong-gu");
-
 
                             //regionFromStore.townUrlParam[] 만큼 반복돌리면됨. 여기 js라서 니 편한대로함. 
                             if (regionFromStore.townQty === 0) { params.append("locationList", "all"); }
@@ -238,7 +238,8 @@ const Navi = () => {
                     </div>
                 </div>
             </div>
-
+            
+            <div className="line"></div>
         </div>
     );
 }

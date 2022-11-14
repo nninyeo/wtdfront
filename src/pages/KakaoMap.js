@@ -26,6 +26,7 @@ const KakaoMap = ({tester}) => {
     
     if(rightList.index !== "") {
         markerControl(withMap, withMarkers, withInfowindows, rightList);
+        //이부분에 현재 렌더링오류발생: Cannot update a component (`KakaoMap`) while rendering a different component (`KakaoMap`). To locate the bad setState() call inside `KakaoMap`
     }
 
     function markerControl(map, markers, infowindows, indexs) {
@@ -140,7 +141,7 @@ const KakaoMap = ({tester}) => {
 
         // /*** 기타등등 함수 ***/
         // Hover 클로저 이벤트
-        function hoverListener(map, marker, infowindow, index, paraClicked) {
+        function hoverListener(map, marker, infowindow, index) {
             return function() {
                 if(!selectedMarker || selectedMarker !== marker) {
                     marker.setImage(hoverImage);
@@ -175,7 +176,7 @@ const KakaoMap = ({tester}) => {
         }
         
         // Click 클로저 이벤트
-        function clickListener(map, marker, infowindow, index, paraClicked) {
+        function clickListener(map, marker, infowindow, index) {
             return function() {
                 if (!selectedMarker || selectedMarker !== marker) {
                     !!selectedMarker && selectedMarker.setImage(normalImage)
