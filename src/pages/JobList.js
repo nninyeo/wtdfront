@@ -21,7 +21,7 @@ const JobList = () => {
 
         dispatch(changeDetailData(mouseChangeTarget));
         
-        //louis. 회사목록 클릭에 따른 변이(뮤테이션) 실행
+        //회사목록 클릭에 따른 변이(뮤테이션) 실행
         let prvIndex = rightList.prvIndex;
         let clickedData = {
             "index": i,

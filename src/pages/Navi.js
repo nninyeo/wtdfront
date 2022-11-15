@@ -190,7 +190,7 @@ const Navi = () => {
                             var params = new URLSearchParams();
                             // params.append("locationList", "seoul.gangdong-gu");
 
-                            //regionFromStore.townUrlParam[] 만큼 반복돌리면됨. 여기 js라서 니 편한대로함. 
+                            //regionFromStore.townUrlParam[] 만큼 반복돌리면됨. 여기 js라서 편한대로함. 
                             if (regionFromStore.townQty === 0) { params.append("locationList", "all"); }
 
                             for(let i = 0; i < regionFromStore.townQty; i++) {

@@ -5,7 +5,7 @@ import { changeDetailData, isSearched, mutationRightList } from '../store'
 const { kakao } = window; //함수형 컴포넌트에 인지
 
 const KakaoMap = ({tester}) => {    
-    //louis aaaa
+
     const dispatch = useDispatch();
 
     let cardData = useSelector((state) => state.DetailData);

@@ -89,9 +89,7 @@ const RegionModal = (props) => {
         if ( selectedTown.length > 1 ) {
             selectedText += ' 등';
         }
-        // setCurrentRegionValue([selectedTown.length, selectedTown, "", selectedText]);//이게또작동이안되네.....
-
-        
+        // setCurrentRegionValue([selectedTown.length, selectedTown, "", selectedText]);//동작안됨
     }
 
     //모달내용 store에 dispatch
@@ -227,24 +225,6 @@ const RegionModal = (props) => {
         //데이터 할당
         // setCurrentTown(nowClickedCityName);
 
-        
-
-
-        // // 선택된 마을이 없는 도시는 도시목록에서 제거
-        // if((selectedTown.filter(x => cityInfo.경기.includes(x))).length === 0){
-        //     let temp456 = [...selectedCity]
-        //     temp456.filter((x) => x !== '경기')
-        //     setSelectedCity = temp456;
-        // }
-        // if((selectedTown.filter(x => cityInfo.서울.includes(x))).length === 0){
-        //     let temp456 = [...selectedCity]
-        //     temp456.filter((x) => x !== '서울')
-        //     setSelectedCity = temp456;
-        // }
-
-        
-        
-    //현재 이 기능은 취소되었음.
         // 현재 선택한 도시에 대해 이미 도시목록에 있으면 삭제, 없으면 추가
         if(nowClickedCityName === "서울") {
             // setSelectedCity(selectedCity.filter(city => city !== "경기"));//경기제거
@@ -267,27 +247,12 @@ const RegionModal = (props) => {
             setListOfTown([...cityInfo.경기]);
         }
 
-        //louis start
-        // if(currentTown.includes("서울") === true){
-        //      if (selectedCity.includes("서울") !== true){
-        //          setSelectedCity([...selectedCity, "서울"]);
-        //      }
-        //  }
-        //  if(currentTown.includes("경기") === true){
-        //      if (selectedCity.includes("경기") !== true){
-        //          setSelectedCity([...selectedCity, "경기"]);
-        //      }
-        //  }
-         //louis end
-
-
         //  if(currentTown.includes("전체") === "전체"){//지우면고장
         //     // setlistOfTown = ["전체"];
         //  }
          calcTownToCity();
          nowClickedCityName = "";
     };
-
 
 
 
