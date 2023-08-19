@@ -186,7 +186,7 @@ const Navi = () => {
                             const host = process.env.REACT_APP_HOST;
                             const url = //default value
                                 // "http://localhost:18080/api/main/jobs?country=kr&job_sort=job.latest_order";
-                                `http://${host}/api/main/jobs?country=kr&job_sort=job.latest_order`;
+                                `https://${host}/api/main/jobs?country=kr&job_sort=job.latest_order`;
                             var params = new URLSearchParams();
                             // params.append("locationList", "seoul.gangdong-gu");
 
